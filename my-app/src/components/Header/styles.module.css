@@ -1,0 +1,90 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 167px;
+}
+
+.mainPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-top: -3%;
+    margin-right: 20%;
+
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+
+    color: #000000;
+}
+
+
+
+.logo {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    left: 26px;
+    top: 10px;
+}
+
+.catalogBtn {
+    position: fixed;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 14px 30px 15px;
+    gap: 5px;
+    width: 129px;
+    height: 49px;
+    left: 157px;
+    top: 30px;
+
+    background: #339933;
+    border: 2px solid #339933;
+    border-radius: 5px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.contStyle {
+    width: 65px;
+    height: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}
+
+.basket {
+    position: relative;
+    width: 26.55px;
+    height: 29.4px;
+    margin: 20px;
+    margin-top: -5%;
+    margin-left: 95%;
+}
+
+.NavLink{
+    text-decoration: none;
+}
+
