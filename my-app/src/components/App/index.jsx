@@ -1,29 +1,27 @@
-import React from 'react';
+import React from "react";
 import { Route, Routes } from "react-router-dom";
-import AllProductsPage from '../../pages/AllProductsPage';
-import AllSalesPage from '../../pages/AllSalesPage';
-import CategoriesPage from '../../pages/CategoriesPage';
-import MainPage from '../../pages/MainPage';
-import NotFoundPage from '../../pages/NotFoundPage';
-import Header from '../Header';
-
+import AllProductsPage from "../../pages/AllProductsPage";
+import AllSalesPage from "../../pages/AllSalesPage";
+import CategoriesPage from "../../pages/CategoriesPage";
+import MainPage from "../../pages/MainPage";
+import NotFoundPage from "../../pages/NotFoundPage";
+import Footer from "../Footer";
+import Header from "../Header";
 
 function App() {
-  
   return (
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={<MainPage/>}/>
-        <Route path="/products/all" element={<AllProductsPage/>}/>
-        <Route path="/sales/all" element={<AllSalesPage/>}/>
-        <Route path="/categories" element={<CategoriesPage/>}/>
-        <Route path="/*" element={<NotFoundPage/>}/>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/products/all" element={<AllProductsPage />} />
+        <Route path="/sales/all" element={<AllSalesPage />} />
+        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
-  
-      </div>
+      <Footer />
+    </div>
   );
 }
 
 export default App;
-
