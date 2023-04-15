@@ -2,8 +2,7 @@ import React from "react";
 import s from "./styles.module.css";
 import logo from "./media/logo.png";
 import { NavLink } from "react-router-dom";
-import { BsHandbag } from 'react-icons/bs';
-
+import { BsHandbag } from "react-icons/bs";
 
 function Header(props) {
   return (

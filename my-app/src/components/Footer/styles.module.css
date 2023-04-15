@@ -3,14 +3,23 @@ footer {
     justify-content: space-between;
     margin-bottom: 0;
     box-sizing: border-box;
+    margin-top: 10%;
 }
 
-.container_1,
+.container_1 {
+    margin-top: 10px;
+    padding-top: 10px;
+    padding-left: 40px;
+
+}
+
+
 .container_2 {
 
     margin-top: 10px;
     padding-top: 10px;
     padding-left: 20px;
+
 }
 
 .contact {
@@ -24,6 +33,7 @@ footer {
     line-height: 130%;
 
     color: #000000;
+
 }
 
 .phone {
@@ -50,9 +60,7 @@ footer {
     font-weight: 900;
     font-size: 40px;
     line-height: 130%;
-    /* identical to box height, or 52px */
-
-
+ 
     color: #000000;
 }
 
@@ -70,6 +78,11 @@ footer {
     text-decoration-line: underline;
 
     color: #000000;
+    
+}
+
+.city a{
+    text-decoration: underline;
 }
 
 .regime {
@@ -83,9 +96,7 @@ footer {
     font-weight: 500;
     font-size: 18px;
     line-height: 130%;
-    /* or 23px */
-
-
+    
     color: #000000;
 }
 
@@ -100,7 +111,6 @@ footer {
     font-weight: 900;
     font-size: 24px;
     line-height: 130%;
-    /* or 31px */
 
 
     color: #000000;
@@ -112,8 +122,6 @@ a {
     color: #333;
     left: 4%;
     right: 4%;
-
-
 }
 
 p {
@@ -137,7 +145,6 @@ p {
     width: 83px;
     height: 19px;
     left: 146px;
-
 
     font-family: 'Montserrat';
     font-style: normal;

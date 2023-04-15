@@ -1,0 +1,89 @@
+.sale_container {
+    position: relative;
+    width: 1440px;
+    height: 400px;
+
+}
+
+.sale {
+    position: relative;
+    width: 92px;
+    height: 52px;
+    left: 40px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+    
+    letter-spacing: 0.03em;
+
+    color: #000000;
+}
+
+
+.image_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-left: 3%;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 20px;
+    margin-left: 100px;
+
+}
+
+.content_1 {
+    position: relative;
+    width: 87px;
+    height: 23px;
+    left: 60px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+
+    letter-spacing: 0.03em;
+    color: #000000;
+}
+
+.content_2 {
+    position: relative;
+    width: 258px;
+    height: 46px;
+    left: -10px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    color: #000000;
+}
+
+.content_3 {
+    position: relative;
+    width: 176px;
+    height: 23px;
+    left: 50px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+
+    letter-spacing: 0.03em;
+    color: #000000;
+}

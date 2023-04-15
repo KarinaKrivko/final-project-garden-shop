@@ -1,0 +1,80 @@
+.background {
+    position: absolute;
+    width: 1440px;
+    height: 600px;
+    left: 0px;
+    top: 167px;
+
+    background: #A1E2EB;
+}
+
+.discount {
+    position: relative;
+
+    width: 540px;
+    height: 104px;
+    left: 40px;
+    top: 55px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 130%;
+
+    color: #FFFFFF;
+}
+
+.newSeason {
+    position: relative;
+    width: 756px;
+    height: 82px;
+    left: 40px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 63px;
+    line-height: 130%;
+
+    color: #FFFFFF;
+}
+
+.flowers {
+    position: absolute;
+    width: 900px;
+    height: 679px;
+    left: 540px;
+    top: -80px;
+
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.btn1 {
+    display: block;
+    padding: 25px 50px;
+    gap: 10px;
+
+    position: absolute;
+    width: 241px;
+    height: 82px;
+    left: 30px;
+    top: 370px;
+
+    background: #FFFFFF;
+    border: none;
+    border-radius: 13px;
+
+    color: #2D2D2D;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 130%;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    text-align: center;
+}

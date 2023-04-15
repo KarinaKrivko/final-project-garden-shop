@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./styles.module.css";
-import Iframe from 'react-iframe';
+import Iframe from "react-iframe";
 
 export default function Map() {
   return (

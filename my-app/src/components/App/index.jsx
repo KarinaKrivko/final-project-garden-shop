@@ -9,8 +9,6 @@ import Footer from "../Footer";
 import Header from "../Header";
 import Map from "../Map";
 
-
-
 function App() {
   return (
     <div>
