@@ -4,14 +4,22 @@ import fertilizer from "./media/fertilizer.png";
 import material from "./media/planting_material.png";
 import products from "./media/protective_products.png";
 import tools from "./media/tools.png";
+import { Link } from 'react-router-dom';
+
 
 function Catalog() {
+
+  const handleClick = () => {
+
+  };
   return (
     <div className={s.catalog_container}>
       <h2 className={s.catalog}>Catalog</h2>
 
       <div>
-        <button className={s.btn_categories}>All Categories</button>
+        <Link to="/categories">
+        <button onClick={handleClick} className={s.btn_categories}>All Categories</button>
+      </Link>
       </div>
 
       <div className={s.image_cont}>
