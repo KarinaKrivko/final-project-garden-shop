@@ -28,12 +28,13 @@ footer {
 
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 40px;
     line-height: 130%;
 
-    color: #000000;
+    text-decoration-line: underline;
 
+    color: #000000;
 }
 
 .phone {
@@ -98,6 +99,11 @@ footer {
     line-height: 130%;
     
     color: #000000;
+
+}
+
+.city a{
+    text-decoration: underline;
 }
 
 .workHours {
