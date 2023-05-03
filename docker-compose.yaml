@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  project_backend:
+    image: localhost:5000/project_backend:1.0.0-dev
+    ports:
+      - "3333:3333"
+
