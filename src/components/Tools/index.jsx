@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import s from "./styles.module.css";
 import ToolsItem from "../ToolsItem";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchProducts} from "../../actions/productActions";
 
 function Tools(props) {
   const [selectedOption, setSelectedOption] = useState("");
@@ -9,29 +11,13 @@ function Tools(props) {
     setSelectedOption(event.target.value);
   };
 
-  const tools = [
-    {
-      id: 1,
-      title: "Tool 1",
-      price: 10.99,
-      image: "/images/tool1.jpg",
-      description: "This is a description for Tool 1.",
-    },
-    {
-      id: 2,
-      title: "Tool 2",
-      price: 15.99,
-      image: "/images/tool2.jpg",
-      description: "This is a description for Tool 2.",
-    },
-    {
-      id: 3,
-      title: "Tool 3",
-      price: 19.99,
-      image: "/images/tool3.jpg",
-      description: "This is a description for Tool 3.",
-    },
-  ];
+  const dispatch = useDispatch();
+  const products = useSelector(state => state.products.products);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
 
   return (
     <div>
@@ -52,10 +38,12 @@ function Tools(props) {
         </select>
       </div>
       <div></div>
-      {tools.map((tool) => (
-          <ToolsItem item={tool}
-          />
-      ))}
+      <div className="tools">
+        {products.map(product => (
+            <ToolsItem key={product.id} item={product} />
+        ))}
+      </div>
+
     </div>
   );
 }

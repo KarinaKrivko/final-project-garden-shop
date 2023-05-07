@@ -1,7 +1,11 @@
 import s from './styles.module.css'
 import {useState} from "react";
-const ToolsItem = ({ item }) => {
+import * as PropTypes from "prop-types";
+
+function ToolsItem(props) {
+    let {item} = props;
     const [isAdded, setIsAdded] = useState(false);
+    const backendHost="http://localhost:3333/"
 
     const addToCart = () => {
         localStorage.setItem(`product_${item.id}`, JSON.stringify(item));
@@ -11,7 +15,7 @@ const ToolsItem = ({ item }) => {
     return (
         <div className={s.grid}>
             <div className={s.image}>
-                <img src={item.image} alt="image" />
+                <img src={backendHost+item.image} alt="image"/>
             </div>
             <div className={s.title}>{item.title}</div>
             <div className={s.price}>${item.price}</div>
@@ -25,6 +29,8 @@ const ToolsItem = ({ item }) => {
             </div>
         </div>
     );
-};
+}
+
+ToolsItem.propTypes = {item: PropTypes.any}
 
 export default ToolsItem;
