@@ -22,7 +22,6 @@
     display: flex;
     flex-direction: row;
     text-align: left;
-    float: left;
     gap: 20px;
     padding: 30px;
 
