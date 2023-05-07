@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import s from "./styles.module.css";
+import ToolsItem from "../ToolsItem";
 
 function Tools(props) {
   const [selectedOption, setSelectedOption] = useState("");
@@ -7,6 +8,30 @@ function Tools(props) {
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
+
+  const tools = [
+    {
+      id: 1,
+      name: "Tool 1",
+      price: 10.99,
+      image: "/images/tool1.jpg",
+      description: "This is a description for Tool 1.",
+    },
+    {
+      id: 2,
+      name: "Tool 2",
+      price: 15.99,
+      image: "/images/tool2.jpg",
+      description: "This is a description for Tool 2.",
+    },
+    {
+      id: 3,
+      name: "Tool 3",
+      price: 19.99,
+      image: "/images/tool3.jpg",
+      description: "This is a description for Tool 3.",
+    },
+  ];
 
   return (
     <div>
@@ -26,6 +51,15 @@ function Tools(props) {
           <option value="name-z-a">Name: Z to A</option>
         </select>
       </div>
+      {tools.map((tool) => (
+          <ToolsItem
+              key={tool.id}
+              name={tool.name}
+              price={tool.price}
+              image={tool.image}
+              description={tool.description}
+          />
+      ))}
     </div>
   );
 }
