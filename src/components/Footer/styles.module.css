@@ -35,6 +35,7 @@ footer {
     text-decoration-line: underline;
 
     color: #000000;
+
 }
 
 .phone {
@@ -99,7 +100,6 @@ footer {
     line-height: 130%;
     
     color: #000000;
-
 }
 
 .city a{
@@ -120,6 +120,11 @@ footer {
 
 
     color: #000000;
+
+}
+
+.city a{
+    text-decoration: underline;
 }
 
 a {
