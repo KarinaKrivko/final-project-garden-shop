@@ -1,0 +1,9 @@
+GET http://localhost:3333//categories/all
+
+###
+GET http://localhost:3333//categories/1
+
+###
+GET http://localhost:3333/products/all
+
+

@@ -4,4 +4,10 @@ services:
     image: localhost:5000/project_backend:1.0.0-dev
     ports:
       - "3333:3333"
-
+  project_frontend:
+    build: .
+    image: localhost:5000/project_frontend:1.0.0-dev
+    ports:
+      - "3000:3000"
+    depends_on:
+      - project_backend
