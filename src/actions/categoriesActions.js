@@ -1,4 +1,4 @@
-// actions/categoryActions.js
+// actions/categoriesActions.js
 import axios from 'axios';
 
 export const FETCH_CATEGORIES_REQUEST = 'FETCH_CATEGORIES_REQUEST';

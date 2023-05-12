@@ -3,7 +3,7 @@ import {
     FETCH_CATEGORIES_REQUEST,
     FETCH_CATEGORIES_SUCCESS,
     FETCH_CATEGORIES_FAILURE
-} from '../actions/categoryActions';
+} from '../actions/categoriesActions';
 
 const initialState = {
     loading: false,

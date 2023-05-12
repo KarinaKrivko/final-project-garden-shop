@@ -9,7 +9,7 @@ import {
     fetchCategoriesSuccess,
     fetchCategoriesFailure,
     fetchCategories,
-} from '../../actions/categoryActions';
+} from '../../actions/categoriesActions';
 import {waitFor} from "@testing-library/react";
 
 jest.mock('axios');
