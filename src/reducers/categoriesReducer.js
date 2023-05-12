@@ -1,33 +1,32 @@
-
 import {
-    FETCH_PRODUCT_REQUEST,
-    FETCH_PRODUCT_SUCCESS,
-    FETCH_PRODUCT_FAILURE
-} from '../actions/productActions';
+    FETCH_CATEGORIES_REQUEST,
+    FETCH_CATEGORIES_SUCCESS,
+    FETCH_CATEGORIES_FAILURE
+} from '../actions/categoriesActions';
 
 const initialState = {
     loading: false,
-    products: [],
+    categories: [],
     error: ''
 };
 
-const productsReducer = (state = initialState, action) => {
+const categoriesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_PRODUCT_REQUEST:
+        case FETCH_CATEGORIES_REQUEST:
             return {
                 ...state,
                 loading: true
             };
-        case FETCH_PRODUCT_SUCCESS:
+        case FETCH_CATEGORIES_SUCCESS:
             return {
                 loading: false,
-                products: action.payload,
+                categories: action.payload,
                 error: ''
             };
-        case FETCH_PRODUCT_FAILURE:
+        case FETCH_CATEGORIES_FAILURE:
             return {
                 loading: false,
-                products: [],
+                categories: [],
                 error: action.payload
             };
         default:
@@ -35,4 +34,4 @@ const productsReducer = (state = initialState, action) => {
     }
 };
 
-export default productsReducer;
+export default categoriesReducer;

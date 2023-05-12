@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import s from "./styles.module.css";
 import ToolsItem from "../ToolsItem";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchProducts} from "../../actions/productActions";
+import {fetchProducts} from "../../actions/productsActions";
 
 function Tools(props) {
   const [selectedOption, setSelectedOption] = useState("");

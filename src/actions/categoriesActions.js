@@ -1,5 +1,6 @@
 // actions/categoriesActions.js
 import axios from 'axios';
+import { API_URL } from '../constants';
 
 export const FETCH_CATEGORIES_REQUEST = 'FETCH_CATEGORIES_REQUEST';
 export const FETCH_CATEGORIES_SUCCESS = 'FETCH_CATEGORIES_SUCCESS';
@@ -28,7 +29,7 @@ export const fetchCategoriesFailure = error => {
 export const fetchCategories = () => {
     return dispatch => {
         dispatch(fetchCategoriesRequest());
-        axios.get('http://localhost:3333/categories/all')
+        axios.get(`${API_URL}/categories/all`)
             .then(response => {
                 const categories = response.data;
                 dispatch(fetchCategoriesSuccess(categories));

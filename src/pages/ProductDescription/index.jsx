@@ -4,7 +4,7 @@ import ProductDescription from '../../components/ProductDescription';
 function ProductDescriptionPage(props) {
     return (
         <div>
-         <ProductDescription />
+            <ProductDescription match={props.match} />
         </div>
     );
 }

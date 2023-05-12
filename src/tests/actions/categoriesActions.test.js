@@ -17,7 +17,7 @@ jest.mock('axios');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('Category Actions', () => {
+describe('Categories Actions', () => {
     beforeEach(() => {
         axios.get.mockReset();
     });

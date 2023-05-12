@@ -1,33 +1,34 @@
 // reducers/categoryReducer.js
 import {
-    FETCH_CATEGORIES_REQUEST,
-    FETCH_CATEGORIES_SUCCESS,
-    FETCH_CATEGORIES_FAILURE
-} from '../actions/categoriesActions';
+    FETCH_CATEGORY_REQUEST,
+    FETCH_CATEGORY_FAILURE,
+    FETCH_CATEGORY_SUCCESS
+} from '../actions/categoryActions';
 
 const initialState = {
     loading: false,
-    categories: [],
+    category: {},
     error: ''
 };
 
 const categoryReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_CATEGORIES_REQUEST:
+        case FETCH_CATEGORY_REQUEST:
             return {
                 ...state,
                 loading: true
             };
-        case FETCH_CATEGORIES_SUCCESS:
-            return {
+        case FETCH_CATEGORY_SUCCESS:
+            const result = {
                 loading: false,
-                categories: action.payload,
+                category: action.payload,
                 error: ''
             };
-        case FETCH_CATEGORIES_FAILURE:
+            return result;
+        case FETCH_CATEGORY_FAILURE:
             return {
                 loading: false,
-                categories: [],
+                category: [],
                 error: action.payload
             };
         default:

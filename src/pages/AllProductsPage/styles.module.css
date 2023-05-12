@@ -3,17 +3,13 @@
     height: 52px;
     left: 31px;
     top: 170px;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
     line-height: 130%;
-
     letter-spacing: 0.03em;
-
     color: #000000;
-
     padding: 30px;
 }
 
@@ -22,7 +18,6 @@
     display: flex;
     flex-direction: row;
     text-align: left;
-    float: left;
     gap: 20px;
     padding: 30px;
 }
@@ -32,46 +27,35 @@
     height: 26.63px;
     left: 30px;
     top: 310.17px;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 130%;
-
     letter-spacing: 0.03em;
-
     color: #000000;
-
 }
 
 .from {
     box-sizing: border-box;
-
     width: 103px;
     height: 42px;
     left: 102px;
     top: 303px;
-
     border: 1px solid #000000;
     border-radius: 7px;
     padding: 10px;
-
 }
 
 .to {
     box-sizing: border-box;
-
     width: 103px;
     height: 42px;
     left: 220px;
     top: 303px;
-
     border: 1px solid #000000;
     border-radius: 7px;
     padding: 10px;
-
-
 }
 
 .Items {
@@ -79,15 +63,12 @@
     height: 26px;
     left: 363px;
     top: 311px;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 130%;
-
     letter-spacing: 0.03em;
-
     color: #000000;
 }
 
@@ -97,39 +78,48 @@
     height: 26px;
     left: 724px;
     top: 311px;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 130%;
-
     letter-spacing: 0.03em;
-
     color: #000000;
 }
 
 .inputForDiscounted {
     box-sizing: border-box;
-
     width: 40px;
     height: 40px;
     left: 593px;
     top: 304px;
-
     border: 1px solid #000000;
     border-radius: 7px;
 }
 
 .default {
     box-sizing: border-box;
-
     width: 219px;
     height: 40px;
     left: 838px;
     top: 304px;
-
     border: 1px solid #000000;
     border-radius: 7px;
     padding: 10px;
+}
+
+.productContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-gap: 20px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    padding: 10px;
+
+}
+.product img{
+    width: 319px;
+    height: 276px;
 }
