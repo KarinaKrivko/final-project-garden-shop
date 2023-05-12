@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProducts } from "../../actions/productActions";
 import s from "./styles.module.css";
+import { API_URL } from '../../constants';
 
 function AllProductsPage() {
   const products = useSelector((state) => state.products.products);
@@ -44,15 +45,18 @@ function AllProductsPage() {
           </select>
         </div>
       </div>
-      {products.map((product) => (
-        <div key={product.id}>
-          <h3>{product.title}</h3>
-          <p>{product.description}</p>
-          <img src={product.image} alt={product.image}></img>
-          <p>Discount Price: {product.discont_price}</p>
-          <p>Price: {product.price}</p>
-        </div>
-      ))}
+      {products.map((product) => {
+        let url = API_URL + product.image;
+        return (
+            <div key={product.id}>
+              <h3>{product.title}</h3>
+              <p>{product.description}</p>
+              <img src={url} alt={product.image}></img>
+              <p>Discount Price: {product.discont_price}</p>
+              <p>Price: {product.price}</p>
+            </div>
+        );
+      })}
     </div>
   );
 }
