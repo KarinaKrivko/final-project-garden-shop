@@ -1,10 +1,11 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
+import {render, screen} from "@testing-library/react";
+import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import Categories from "../../components/Categories";
 import "@testing-library/jest-dom/extend-expect";
+import {MemoryRouter} from "react-router-dom";
 
 const mockStore = configureStore([thunk]);
 
@@ -13,8 +14,8 @@ describe("Categories component", () => {
         const store = mockStore({
             categories: {
                 categories: [
-                    { id: 1, title: "Category 1", image: "image1.jpg" },
-                    { id: 2, title: "Category 2", image: "image2.jpg" },
+                    {id: 1, title: "Category 1", image: "image1.jpg"},
+                    {id: 2, title: "Category 2", image: "image2.jpg"},
                 ],
                 loading: false,
                 error: null,
@@ -22,7 +23,9 @@ describe("Categories component", () => {
         });
         render(
             <Provider store={store}>
-                <Categories />
+                <MemoryRouter>
+                    <Categories/>
+                </MemoryRouter>
             </Provider>
         );
         const category1Element = await screen.findByText("Category 1");
@@ -41,7 +44,7 @@ describe("Categories component", () => {
         });
         render(
             <Provider store={store}>
-                <Categories />
+                <Categories/>
             </Provider>
         );
         const errorMessageElement = await screen.findByText(

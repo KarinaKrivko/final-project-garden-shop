@@ -51,6 +51,7 @@
 }
 
 .btn1 {
+    cursor: pointer;
     display: block;
     padding: 25px 50px;
     gap: 10px;

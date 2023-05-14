@@ -25,7 +25,7 @@ function Cart(props) {
         const cartItems = Object.keys(localStorage)
             .filter(key => key.startsWith('product_'))
             .map(key => JSON.parse(localStorage.getItem(key)))
-            .filter(it=>it.id!==id)
+            .filter(it=>it.data.id!==id)
         localStorage.removeItem(`product_${id}`);
         setCartItems(cartItems)
     }
@@ -47,15 +47,16 @@ function Cart(props) {
                 </div>
             </Link>
             {cartItems.map(item =>
-                <div key={item.id}>
+                <div key={item.data.id}>
                     <hr className={s.gorizontal_line}/>
-                    <p onClick={() => handleRemove(item.id)} className={s.close}>x</p>
-                    <p className={s.description}>{item.description}</p>
-                    <img className={s.img} src={`${API_URL}${item.image}`} alt={item.img}/>
+                    <p onClick={() => handleRemove(item.data.id)} className={s.close}>x</p>
+                    <p className={s.description}>{item.data.description}</p>
+                    <img className={s.img} src={`${API_URL}${item.data.image}`} alt={item.data.img}/>
                     <div className={s.flex}>
-                        <p className={s.price}>{item.discont_price}$</p>
-                        <p data-testid={`cart-price-${item.id}`} className={s.through}>{item.price}$</p>
+                        <p className={s.price}>{item.data.discont_price}$</p>
+                        <p data-testid={`cart-price-${item.data.id}`} className={s.through}>{item.data.price}$</p>
                     </div>
+                    <h3>Count: {item.count}</h3>
                 </div>
             )}
             <ValidationForm/>

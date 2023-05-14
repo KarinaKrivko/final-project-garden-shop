@@ -15,20 +15,26 @@ describe("Cart component", () => {
         // Arrange
         const cartItems = [
             {
-                id: 1,
-                title: "Product 1",
-                price: 10,
-                discont_price: 9,
-                description: "Product 1 description",
-                image: "/product_img/1.jpg",
+                count: 1,
+                data: {
+                    id: 1,
+                    title: "Product 1",
+                    price: 10,
+                    discont_price: 9,
+                    description: "Product 1 description",
+                    image: "/product_img/1.jpg",
+                }
             },
             {
-                id: 2,
-                title: "Product 2",
-                price: 15,
-                discont_price: 12,
-                description: "Product 2 description",
-                image: "/product_img/2.jpg",
+                count: 1,
+                data: {
+                    id: 2,
+                    title: "Product 2",
+                    price: 15,
+                    discont_price: 12,
+                    description: "Product 2 description",
+                    image: "/product_img/2.jpg",
+                }
             },
         ];
         localStorage.setItem("product_1", JSON.stringify(cartItems[0]));
@@ -43,9 +49,9 @@ describe("Cart component", () => {
 
         // Assert
         expect(screen.queryByText("No items in the cart.")).not.toBeInTheDocument();
-        expect(screen.getByText(cartItems[0].description)).toBeInTheDocument();
+        expect(screen.getByText(cartItems[0].data.description)).toBeInTheDocument();
         expect(screen.getByTestId("cart-price-1")).toBeInTheDocument();
-        expect(screen.getByText(cartItems[1].description)).toBeInTheDocument();
+        expect(screen.getByText(cartItems[1].data.description)).toBeInTheDocument();
         expect(screen.getByTestId("cart-price-2")).toBeInTheDocument();
     });
 });
