@@ -23,19 +23,16 @@
 }
 
 
-.image_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding-left: 3%;
-}
-
 .grid_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
-    margin: 20px;
-    margin-left: 100px;
 
+}
+.grid_container img{
+    padding-left: 3%;
+    width: 318px;
+    height: 350px;
 }
 
 .content_1 {

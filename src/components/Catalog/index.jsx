@@ -1,20 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import s from "./styles.module.css";
-import fertilizer from "./media/fertilizer.png";
-import material from "./media/planting_material.png";
-import products from "./media/protective_products.png";
-import tools from "./media/tools.png";
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux";
+import {fetchCategories} from "../../actions/categoriesActions";
+import {API_URL} from "../../constants";
 
 
 function Catalog() {
+    const dispatch = useDispatch();
+    const categories = useSelector(state => state.categories.categories);
 
   const handleClick = () => {
 
   };
-  return (
-    <div className={s.catalog_container}>
-      <h2 className={s.catalog}>Catalog</h2>
+    return (
+        <div className={s.catalog_container}>
+            <h2 className={s.catalog}>Catalog</h2>
 
       <div>
         <Link to="/categories">

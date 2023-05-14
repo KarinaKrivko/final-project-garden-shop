@@ -1,27 +1,41 @@
-import React from "react";
+import React, {useEffect} from "react";
 import s from "./styles.module.css";
-import fertilizer from "./media/fertilizer.png";
-import material from "./media/planting_material.png";
-import products from "./media/protective_products.png";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchProducts} from "../../actions/productsActions";
+import {API_URL} from "../../constants";
+import {Link} from "react-router-dom";
 
 function Sale(props) {
-  return (
-    <div className={s.sale_container}>
-      <h2 className={s.sale}>Sale</h2>
+    const products = useSelector((state) => state.products.products);
+    const dispatch = useDispatch();
 
-      <div className={s.image_container}>
-        <img src={fertilizer} alt="fertilizer"></img>
-        <img src={material} alt="planting_material"></img>
-        <img src={products} alt="protective_products"></img>
-      </div>
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [dispatch]);
 
-      <div className={s.grid_container}>
-        <div className={s.content_1}>Fertilizer</div>
-        <div className={s.content_2}>Protective products and septic tanks </div>
-        <div className={s.content_3}>Planting material </div>
-      </div>
-    </div>
-  );
+
+    return (
+        <div className={s.sale_container}>
+            <h2 className={s.sale}>Sale</h2>
+            <div className={s.grid_container}>
+                {products.slice(0, 3).map((it) => {
+                    let url = `${API_URL}${it.image}`;
+                    return (
+                        <div key={it.id} >
+                            <Link to={`/description/${it.id}`}>
+                            <div>
+                                <img src={url} alt={it.image}></img>
+                            </div>
+                            </Link>
+                            <div className={s.grid_container}>
+                                <p key={it.id} data-testid="sale-title">{it.title}</p>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+    );
 }
 
 export default Sale;

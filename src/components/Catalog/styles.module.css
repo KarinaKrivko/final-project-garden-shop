@@ -41,24 +41,20 @@
     letter-spacing: 0.03em;
 
     box-sizing: border-box;
-    border: 2px solid#8B8B8B;
+    border: 2px solid #8B8B8B;
 }
 
-
-.image_cont {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
-    padding-left: 3%;
-    padding-right: 3%;
-}
 
 .grid_cont {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
-    margin: 20px;
-    margin-left: 100px;
+}
+
+.grid_cont img {
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 318px;
+    height: 350px;
 }
 
 .content_1 {
