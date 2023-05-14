@@ -1,10 +1,12 @@
 import {API_URL} from "../../constants";
 import s from "../../pages/AllProductsPage/styles.module.css";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Button from '@mui/material/Button';
 import * as PropTypes from "prop-types";
-import {array} from "yup";
 import _ from "lodash";
+import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {calculateCounter} from "../../actions/cartCounterActions";
 
 
 function ProductItem({product}) {
@@ -16,11 +18,14 @@ function ProductItem({product}) {
         <div onMouseEnter={() => setShowButton(true)}
              onMouseLeave={() => setShowButton(false)}
              key={product.id} className={s.product}>
-            <h3>{product.title}</h3>
-            <img src={url} alt={product.image}></img>
-            <p>Discount Price: {product.discont_price}</p>
-            <p key={product.id} data-testid="product-price">Price: {product.price}</p>
-            {showButton && <AddToCartButton item={product}/>}
+            <div>
+                <h3>{product.title}</h3>
+                <Link to={`/description/${product.id}`}> <img src={url} alt={product.image}></img> </Link>
+                <p>Discount Price: {product.discont_price}</p>
+                <p key={product.id} data-testid={"product-price-"+product.id}>Price: {product.price}</p>
+                {showButton && <AddToCartButton item={product}/>}
+            </div>
+
         </div>
 
     );
@@ -30,6 +35,12 @@ export default ProductItem
 
 function AddToCartButton(props) {
     let {item} = props;
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(calculateCounter());
+    }, [dispatch]);
 
     const addToCart = () => {
         let existingValue = localStorage.getItem(`product_${item.id}`);
@@ -47,6 +58,7 @@ function AddToCartButton(props) {
             data: currentData.data
         }
         localStorage.setItem(`product_${item.id}`, JSON.stringify(resultObject))
+        dispatch(calculateCounter());
     };
 
     return <Button onClick={addToCart}>Add To Cart</Button>;

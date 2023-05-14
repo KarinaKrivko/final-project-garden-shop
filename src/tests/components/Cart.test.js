@@ -3,15 +3,36 @@ import {render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Cart from "../../components/Cart";
 import {BrowserRouter} from "react-router-dom";
+import {Provider} from "react-redux";
+import configureStore from "redux-mock-store";
+import thunk from "redux-thunk";
+
+const mockStore = configureStore([thunk]);
 
 describe("Cart component", () => {
     it("should render 'No items in the cart.' if there are no items in the cart", () => {
-        render(<Cart/>);
+        const store = mockStore({
+            categories: {
+                counter: 42
+            },
+        });
+
+        render(
+            <Provider store={store}>
+                <Cart/>
+            </Provider>
+        );
 
         expect(screen.getByText("No items in the cart.")).toBeInTheDocument();
     });
 
     it("should render cart items correctly", () => {
+        const store = mockStore({
+            categories: {
+                counter: 42
+            },
+        });
+
         // Arrange
         const cartItems = [
             {
@@ -42,9 +63,11 @@ describe("Cart component", () => {
 
         // Act
         render(
-            <BrowserRouter>
-                <Cart/>
-            </BrowserRouter>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Cart/>
+                </BrowserRouter>
+            </Provider>
         )
 
         // Assert

@@ -12,7 +12,6 @@
     color: #000000;
     padding: 30px;
 }
-
 .tools_container {
     position: relative;
     display: flex;
@@ -122,4 +121,5 @@
 .product img{
     width: 319px;
     height: 276px;
+    border-radius: 5%;
 }

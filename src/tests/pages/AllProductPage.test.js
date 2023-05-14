@@ -1,131 +1,105 @@
 import React from 'react';
-import { fireEvent, render, screen} from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import AllProductsPage from '../../pages/AllProductsPage';
-
+import AllProductsPage from "../../pages/AllProductsPage";
+import {BrowserRouter} from "react-router-dom";
 import '@testing-library/jest-dom/extend-expect';
+import {fetchProductsSuccess} from "../../actions/productsActions";
 
+const mockStore = configureStore([]);
+const mockProducts = [
+    { id: 1, price: 50, discont_price: null },
+    { id: 2, price: 100, discont_price: 80 },
+    { id: 3, price: 150, discont_price: null },
+];
 
-const mockStore = configureStore([thunk]);
-
-describe('AllProductsPage Page', () => {
+describe("AllProductsPage", () => {
     let store;
 
     beforeEach(() => {
         store = mockStore({
-            products: {
-                products: [
-                    {
-                        id: 1,
-                        title: 'Product 1',
-                        description: ' description 1',
-                        price: 100,
-                        discont_price: 90,
-                        image: '/images/product1.png',
-                    },
-                    {
-                        id: 2,
-                        title: 'Product 2',
-                        description: ' description 2',
-                        price: 50,
-                        discont_price: null,
-                        image: '/images/product2.png',
-                    },
-                    {
-                        id: 3,
-                        title: 'Product 3',
-                        description: ' description 3',
-                        price: 150,
-                        discont_price: 120,
-                        image: '/images/product3.png',
-                    },
-                ],
-            },
+            products: { products: mockProducts }
         });
+
         store.dispatch = jest.fn();
+
         render(
             <Provider store={store}>
-                <AllProductsPage />
-            </Provider>
+                <BrowserRouter>
+                    <AllProductsPage />
+                </BrowserRouter>
+            </Provider>,
         );
     });
 
-    test('should render products', async () => {
-
-        const productTitles = await screen.findAllByText(/Product/);
-        expect(productTitles).toHaveLength(3);
-    });
-
-    test('should sort products by price from low to high', () => {
-        const selectElement = screen.getByLabelText('Sorted');
-        fireEvent.change(selectElement, { target: { value: 'price-low-high' } });
-
-        expect(store.dispatch).toHaveBeenCalledWith({
-            type: 'FETCH_PRODUCTS_SUCCESS',
-            payload: [
-                {
-                    id: 2,
-                    title: 'Product 2',
-                    description: ' description 2',
-                    price: 50,
-                    discont_price: null,
-                    image: '/images/product2.png',
-                },
-                {
-                    id: 1,
-                    title: 'Product 1',
-                    description: ' description 1',
-                    price: 100,
-                    discont_price: 90,
-                    image: '/images/product1.png',
-                },
-                {
-                    id: 3,
-                    title: 'Product 3',
-                    description: ' description 3',
-                    price: 150,
-                    discont_price: 120,
-                    image: '/images/product3.png',
-                },
-            ],
+    it("renders products", () => {
+        mockProducts.forEach((product) => {
+            const productPrice = "product-price-"+product.id;
+            expect(screen.getByTestId(productPrice)).toBeInTheDocument();
         });
     });
 
-    test('should sort products by price from high to low', () => {
-        const selectElement = screen.getByLabelText('Sorted');
-        fireEvent.change(selectElement, { target: { value: 'price-high-low' } });
-
-        expect(store.dispatch).toHaveBeenCalledWith({
-            type: 'FETCH_PRODUCTS_SUCCESS',
-            payload: [
-                {
-                    id: 3,
-                    title: 'Product 3',
-                    description: ' description 3',
-                    price: 150,
-                    discont_price: 120,
-                    image: '/images/product3.png',
-                },
-                {
-                    id: 1,
-                    title: 'Product 1',
-                    description: ' description 1',
-                    price: 100,
-                    discont_price: 90,
-                    image: '/images/product1.png',
-                },
-                {
-                    id: 2,
-                    title: 'Product 2',
-                    description: ' description 2',
-                    price: 50,
-                    discont_price: null,
-                    image: '/images/product2.png',
-                },
-
-            ],
+    it("sorts products by price low to high", () => {
+        fireEvent.change(screen.getByTestId("sort-select"), {
+            target: { value: "price-low-high" }
         });
+
+        expect(store.dispatch).toHaveBeenCalledWith(
+            fetchProductsSuccess(
+                expect.arrayContaining([
+                    expect.objectContaining({ id: 1, price: 50 }),
+                    expect.objectContaining({ id: 2, price: 100 }),
+                    expect.objectContaining({ id: 3, price: 150 })
+                ])
+            )
+        );
+    });
+
+    it("sorts products by price high to low", () => {
+        fireEvent.change(screen.getByTestId("sort-select"), {
+            target: { value: "price-high-low" }
+        });
+
+        expect(store.dispatch).toHaveBeenCalledWith(
+            fetchProductsSuccess(
+                expect.arrayContaining([
+                    expect.objectContaining({ id: 3, price: 150 }),
+                    expect.objectContaining({ id: 2, price: 100 }),
+                    expect.objectContaining({ id: 1, price: 50 })
+                ])
+            )
+        );
+    });
+
+    it("filters products by price range", () => {
+        fireEvent.input(screen.getByPlaceholderText("from"), { target: { value: "60" } });
+        fireEvent.input(screen.getByPlaceholderText("to"), { target: { value: "120" } });
+        fireEvent.blur(screen.getByPlaceholderText("to"));
+
+        expect(store.dispatch).toHaveBeenCalledWith(
+            fetchProductsSuccess(
+                expect.arrayContaining([expect.objectContaining({ id: 2, price: 100 })])
+            )
+        );
+    });
+
+    it("shows only discounted products when checkbox is checked", () => {
+        fireEvent.click(screen.getByTestId("discount-checkbox"));
+
+        expect(store.dispatch).toHaveBeenCalledWith(
+            fetchProductsSuccess(
+                expect.arrayContaining([expect.objectContaining({ id: 2, price: 100, discont_price: 80 })])
+            )
+        );
+    });
+
+    it("shows all products when checkbox is unchecked", () => {
+        fireEvent.click(screen.getByTestId("discount-checkbox"));
+        fireEvent.click(screen.getByTestId("discount-checkbox"));
+
+        expect(store.dispatch).toHaveBeenCalledWith(
+            fetchProductsSuccess(expect.arrayContaining(mockProducts))
+        );
     });
 });

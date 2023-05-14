@@ -94,3 +94,9 @@ a:active {
     top: -30px;
     margin-left: 80%;
 }
+
+.counter{
+    color: red;
+    font-size: 16px
+
+}
