@@ -15,7 +15,7 @@ function Catalog() {
   };
     return (
         <div className={s.catalog_container}>
-            <h2 className={s.catalog}>Catalog</h2>
+            <h2>Catalog</h2>
 
       <div>
         <Link to="/categories">

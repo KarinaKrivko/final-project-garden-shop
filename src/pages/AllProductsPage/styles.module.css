@@ -148,6 +148,6 @@
 
 @media (max-width: 480px) {
     .productContainer {
-        grid-template-columns: 100%;
+        grid-template-columns: repeat(1, 50%);
     }
 }

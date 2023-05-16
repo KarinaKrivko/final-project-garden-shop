@@ -54,21 +54,20 @@ function ProductDescription(props) {
           <div>
             <div className={s.productInformationFlex}>
               <div className={s.priceColumn}>
-                <p className={s.price}>${product.price}</p>
-                {product.discount_price ? (
+                <span className={s.price}>${product.price}</span>
+                {product.discont_price ? (
                   <>
-                    <p className={s.discont_price}>
-                      ${product.discount_price}{" "}
-                    </p>
-                    <p className={s.sale_price}>
-                      -
+                    <span className={s.discont_price}>
+                      ${product.discont_price}{" "}
+                    </span>
+                    <span className={s.sale_price}>
                       {Math.round(
-                        ((product.discount_price - product.price) /
-                          product.discount_price) *
+                        ((product.discont_price - product.price) /
+                          product.discont_price) *
                           100
                       )}
                       %
-                    </p>
+                    </span>
                   </>
                 ) : null}
               </div>

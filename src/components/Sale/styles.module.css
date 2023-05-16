@@ -1,33 +1,28 @@
 .sale_container {
-    position: relative;
+
     width: 1440px;
     height: 400px;
     padding-bottom: 50px;
 }
 
 .sale {
-    position: relative;
     width: 92px;
     height: 52px;
     padding-top: 70px;
     padding-bottom: 40px;
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
     line-height: 130%;
-
     letter-spacing: 0.03em;
-
     color: #000000;
-
 }
 
 
 .grid_container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(3,30%);
     gap: 3px;
 }
 
@@ -99,5 +94,25 @@ p {
     letter-spacing: 0.03em;
     color: #FF32A1;
     padding-top: 8px;
+
+}
+
+@media (max-width: 768px) {
+    .grid_container {
+        grid-template-columns: repeat(2, 50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid_container {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-columns: 50%;
+    }
+    .grid_container img {
+        width: 100px;
+        height: 100px;
+        padding-left: 2%;
+        padding-top: 2%;
+    }
 
 }

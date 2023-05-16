@@ -33,21 +33,21 @@ function SalesForm(props) {
               contentLabel="Discount Modal"
               ariaHideApp={false}
             >
-              <h4>Dear Customer,</h4>
-              <div className={s.text}>
-                <p>
+              <h4 className={s.customer}>Dear Customer,</h4>
+              <div>
+                <p className={s.main_text}>
                   Thanks a lot for your request, you will get your code with
                   DISCOUNT shortly. Please check your email. If you don't find
                   the email in a few minutes, please check your “junk mail” or
                   “spam” folder. If you still don’t receive an email from us,
                   don't hesitate to contact us, please use the number below:
                 </p>
-                <p className={s.phone}> 24/7 Service phone: +7 999 999 99 99</p>
-                <p>
+                <p className={s.phone}> 24/7 Service phone: <br></br> +7 999 999 99 99</p>
+                <p className={s.main_text}>
                   We will do our best to answer all your requests as soon as
-                  possible. Wish you all the best! Have a good day!
+                  possible. Have a good day!
                 </p>
-                <p>Sincerely Yours, GardenShop</p>
+                <p className={s.wishes}>Sincerely Yours, GardenShop</p>
                 <button className={s.close_btn} onClick={handleCloseModal}>
                   Close
                 </button>
