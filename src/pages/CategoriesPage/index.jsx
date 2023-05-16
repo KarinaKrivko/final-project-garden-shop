@@ -1,9 +1,10 @@
 import React from 'react';
+import Categories from '../../components/Categories';
 
 function CategoriesPage(props) {
     return (
         <div>
-            CategoriesPage
+            <Categories />
         </div>
     );
 }

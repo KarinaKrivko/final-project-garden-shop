@@ -25,7 +25,6 @@ function SalesForm(props) {
         actions.setSubmitting(false);
         try {
             const response = await dispatch(postSale(JSON.stringify(values)));
-            alert(JSON.stringify(response))
         } catch (error) {
             setIsOpen(true);
         } finally {
@@ -58,7 +57,7 @@ function SalesForm(props) {
                                         className={s.tel}
                                         type="text"
                                         name="phoneNumber"
-                                        placeholder="Phone number"
+                                        placeholder="+49 (000) 000 00 000  "
                                     />
                                     <ErrorMessage
                                         name="phoneNumber"
