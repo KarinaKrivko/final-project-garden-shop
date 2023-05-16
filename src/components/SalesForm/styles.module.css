@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.gnome {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    padding: 70px;
+
+}
+
+.container {
+    position: relative;
+    height: 620px;
+    background: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
+}
+
+.discount {
+    position: relative;
+    bottom: 30px;
+    width: 469px;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+
+}
+
+.tel {
+    position: relative;
+    width: 473px;
+    height: 75.44px;
+    border-radius: 25.15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.firstOrder {
+    position: relative;
+    text-align: center;
+    height: 100px;
+    width: 469px;
+    bottom: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+}
+
+.discount_btn {
+    display: grid;
+    grid-template-columns: 1f 1fr;
+    display: block;
+    box-sizing: border-box;
+    background: #339933;
+    width: 473px;
+    height: 75.44px;
+    border: 2.39494px solid #FFFFFF;
+    border-radius: 25.14px;
+    color: #FFFFFF;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28.7392px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+}
+
+.block {
+    position: absolute;
+    left: 680px;
+    top: 30px;
+}
+
+.btns {
+    position: relative;
+    left: 10px;
+    top: 100px;
+}
+
+.customer {
+    padding-top: 5%;
+    font-size: large;
+    padding-left: 35%;
+
+}
+
+.main_text {
+    height: fit-content;
+    width: fit-content;
+}
+
+.phone {
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.modal {
+    height: 600px;
+    width: 500px;
+    background: white;
+    border-radius: 25px;
+    border: 1px solid black;
+    z-index: 9999;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+}
+
+.phone {
+    font-size: x-large;
+    padding-left: 20%;
+    color: black;
+
+}
+
+.wishes {
+    padding-left: 20%;
+}
+
+.close_btn {
+    background-color: #339933;
+    border-radius: 3px;
+    padding-left: 0%;
+    left: 20%;
+    margin-left: 45%;
+    height: 30px;
+    width: 100px;
+    color: white;
+    border: none;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.error {
+    color: navajowhite;
+    padding: 1em;
+    text-align: center;
+}
