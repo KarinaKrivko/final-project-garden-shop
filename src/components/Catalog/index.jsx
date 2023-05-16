@@ -10,34 +10,41 @@ function Catalog() {
     const dispatch = useDispatch();
     const categories = useSelector(state => state.categories.categories);
 
-  const handleClick = () => {
+    useEffect(() => {
+        dispatch(fetchCategories());
+    }, [dispatch]);
+    const handleClick = () => {
 
-  };
+    };
+
     return (
         <div className={s.catalog_container}>
             <h2>Catalog</h2>
 
-      <div>
-        <Link to="/categories">
-        <button onClick={handleClick} className={s.btn_categories}>All Categories</button>
-      </Link>
-      </div>
-
-      <div className={s.image_cont}>
-        <img src={fertilizer} alt="fertilizer"></img>
-        <img src={material} alt="planting_material"></img>
-        <img src={products} alt="protective_products"></img>
-        <img src={tools} alt="tools"></img>
-      </div>
-
-      <div className={s.grid_cont}>
-        <div className={s.content_1}>Fertilizer</div>
-        <div className={s.content_2}>Protective products and septic tanks </div>
-        <div className={s.content_3}>Planting material </div>
-        <div className={s.content_4}>Tools and Inventory</div>
-      </div>
-    </div>
-  );
+            <div>
+                <Link to="/categories">
+                    <button onClick={handleClick} className={s.btn_categories}>All Categories</button>
+                </Link>
+            </div>
+            <div className={s.grid_cont}>
+                {categories.slice(0, 4).map((it) => {
+                    let url = `${API_URL}${it.image}`;
+                    return (
+                        <Link to={`categories/${it.id}`} key={it.id}>
+                            <div >
+                                <div>
+                                    <img src={url} alt={it.image}></img>
+                                </div>
+                                <div className={s.grid_cont}>
+                                    <p key={it.id} data-testid="category-title">{it.title}</p>
+                                </div>
+                            </div>
+                        </Link>
+                    );
+                })}
+            </div>
+        </div>
+    );
 }
 
 export default Catalog;
