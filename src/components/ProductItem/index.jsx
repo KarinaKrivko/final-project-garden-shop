@@ -1,12 +1,14 @@
 import {API_URL} from "../../constants";
-import s from "../../pages/AllProductsPage/styles.module.css";
+import styleItem from "./styles.module.css";
 import React, {useEffect, useState} from "react";
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import * as PropTypes from "prop-types";
 import _ from "lodash";
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {calculateCounter} from "../../actions/cartCounterActions";
+import s from "./styles.module.css";
+
 
 
 function ProductItem({product}) {
@@ -17,13 +19,16 @@ function ProductItem({product}) {
     return (
         <div onMouseEnter={() => setShowButton(true)}
              onMouseLeave={() => setShowButton(false)}
-             key={product.id} className={s.product}>
+             key={product.id} className={styleItem.product}>
             <div>
-                <h3>{product.title}</h3>
                 <Link to={`/description/${product.id}`}> <img src={url} alt={product.image}></img> </Link>
+                <div className={s.priceContainer}>
                 <p>Discount Price: {product.discont_price}</p>
                 <p key={product.id} data-testid={"product-price-"+product.id}>Price: {product.price}</p>
+                </div>
                 {showButton && <AddToCartButton item={product}/>}
+                <h3>{product.title}</h3>
+
             </div>
 
         </div>
@@ -61,7 +66,7 @@ function AddToCartButton(props) {
         dispatch(calculateCounter());
     };
 
-    return <Button onClick={addToCart}>Add To Cart</Button>;
+    return <button className={styleItem.add} onClick={addToCart}>Add to cart</button>;
 }
 
 AddToCartButton.propTypes = {item: PropTypes.any}

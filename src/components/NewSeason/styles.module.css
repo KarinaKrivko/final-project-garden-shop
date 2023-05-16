@@ -26,10 +26,13 @@
 }
 
 .newSeason {
-    position: relative;
+   display: flex;
+   flex-direction: row;
+   justify-content: flex-start;
+   padding-top: 60px;
+   padding-left: 40px;
     width: 756px;
     height: 82px;
-    left: 40px;
 
     font-family: 'Montserrat';
     font-style: normal;

@@ -4,6 +4,7 @@ import React, {useEffect} from "react";
 import {fetchCategory} from "../../actions/categoryActions";
 import ProductItem from "../ProductItem";
 import s from "../../pages/AllProductsPage/styles.module.css";
+import Filters from "../Filters";
 
 function ProductByCategory() {
 
@@ -33,7 +34,8 @@ function ProductByCategory() {
 
     return (
         <div>
-            Category: {id}
+            <h3>{productByCategory.category.title}</h3>
+            <Filters/>
             <div className={s.productContainer}>
                 {
                     values.map((product) =>

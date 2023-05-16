@@ -12,6 +12,7 @@
     color: #000000;
     padding: 30px;
 }
+
 .tools_container {
     position: relative;
     display: flex;
@@ -121,5 +122,21 @@
 .product img{
     width: 319px;
     height: 276px;
-    border-radius: 5%;
+}
+
+.discounted{
+    width: 191px;
+    height: 26px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    
+    letter-spacing: 0.03em;
+    
+    color: #000000;
+    
+
 }
