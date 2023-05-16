@@ -36,7 +36,7 @@ function ProductByCategory() {
   return (
     <div>
       <h3 className={s.title}>{productByCategory.category.title}</h3>
-      <Filters />
+      <Filters showDiscountCmp={true} />
       <div className={s.productContainer}>
         {values.map((product) => (
           <ProductItem key={product.id} product={product} />

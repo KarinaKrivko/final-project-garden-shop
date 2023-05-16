@@ -2,19 +2,24 @@ import s from "./styles.module.css";
 import * as PropTypes from "prop-types";
 import React from "react";
 
- function Filters(props) {
+function Filters(props) {
     return <div>
         <div className={s.tools_container}>
-        <div className={s.price}>Price</div>
+            <div className={s.price}>Price</div>
             <input id="priceLow" className={s.from} onBlur={props.onBlur} placeholder="from"></input>
             <input id="priceHigh" className={s.to} onBlur={props.onBlur} placeholder="to"></input>
-            <div className={s.discounted}>Discounted items</div>
-            <input id="discountCheckBox"
-                   type={"checkbox"}
-                   onChange={props.onChangeCheckbox}
-                   className={s.inputForDiscounted}
-                   data-testid="discount-checkbox"
-            />
+
+            {props.showDiscountCmp===true &&
+                <>
+                    <div className={s.discounted}>Discounted items</div>
+                    <input id="discountCheckBox"
+                           type={"checkbox"}
+                           onChange={props.onChangeCheckbox}
+                           className={s.inputForDiscounted}
+                           data-testid="discount-checkbox"
+                    />
+                </>
+            }
             <label className={s.sorted} htmlFor="my-select">
                 Sorted
             </label>
@@ -37,7 +42,8 @@ Filters.propTypes = {
     onBlur: PropTypes.func,
     onChangeCheckbox: PropTypes.func,
     value: PropTypes.string,
-    onChangeSelect: PropTypes.func
+    onChangeSelect: PropTypes.func,
+    showDiscountCmp: PropTypes.bool
 };
 
- export default Filters;
+export default Filters;
