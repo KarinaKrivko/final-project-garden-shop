@@ -119,7 +119,35 @@
     padding: 10px;
 
 }
-.product img{
+
+.product img {
     width: 319px;
     height: 276px;
+}
+
+.pageName {
+    width: 411px;
+    height: 52px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    color: #000000;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .productContainer {
+        grid-template-columns: repeat(2, 50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .productContainer {
+        grid-template-columns: 100%;
+    }
 }

@@ -72,9 +72,9 @@ describe("Cart component", () => {
 
         // Assert
         expect(screen.queryByText("No items in the cart.")).not.toBeInTheDocument();
-        expect(screen.getByText(cartItems[0].data.description)).toBeInTheDocument();
-        expect(screen.getByTestId("cart-price-1")).toBeInTheDocument();
-        expect(screen.getByText(cartItems[1].data.description)).toBeInTheDocument();
-        expect(screen.getByTestId("cart-price-2")).toBeInTheDocument();
+        expect(screen.getByText(cartItems[0].data.title)).toBeInTheDocument();
+        expect(screen.getByTestId("product-price-1")).toBeInTheDocument();
+        expect(screen.getByText(cartItems[1].data.title)).toBeInTheDocument();
+        expect(screen.getByTestId("product-price-2")).toBeInTheDocument();
     });
 });

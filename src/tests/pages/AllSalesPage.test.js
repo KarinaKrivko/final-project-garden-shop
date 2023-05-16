@@ -22,7 +22,7 @@ describe("AllSalesPage", () => {
             </Provider>
         );
 
-        const allSalesPageElement = screen.getByText("All Sales Page");
+        const allSalesPageElement = screen.getByText("Products with sale");
         expect(allSalesPageElement).toBeInTheDocument();
     });
 
@@ -54,6 +54,14 @@ describe("AllSalesPage", () => {
                         discont_price: 120,
                         image: "/images/product3.png",
                     },
+                    {
+                        id: 4,
+                        title: "Product 4",
+                        description: "Description 4",
+                        price: 150,
+                        discont_price: 120,
+                        image: "/images/product4.png",
+                    },
                 ],
             },
         });
@@ -67,6 +75,6 @@ describe("AllSalesPage", () => {
         );
 
         const productTitles = screen.getAllByText(/Product/);
-        expect(productTitles).toHaveLength(2);
+        expect(productTitles).toHaveLength(4);
     });
 });

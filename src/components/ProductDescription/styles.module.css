@@ -1,20 +1,15 @@
 .wrapper {
     width: 1321px;
     height: 717px;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     box-sizing: border-box;
+    grid-gap: 50px;
+    top: 20%;
 }
 
-
 .name {
-    position: absolute;
-    width: 121px;
-    height: 47px;
-    left: 30px;
-    top: 150px;
+    width: 720px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
@@ -22,16 +17,15 @@
     line-height: 130%;
     letter-spacing: 0.03em;
     color: #3A3A3A;
+    padding-left: 50px;
+    padding-top: 35px;
+    padding-bottom: 15px;
 }
 
 .img {
-    position: relative;
     width: 710px;
     height: 710px;
-    top: 130px;
-    padding-bottom: 40px;
-    padding-left: 87px;
-
+    padding-left: 57px;
 }
 
 
@@ -45,8 +39,6 @@
 .productInformationFlex {
     display: flex;
     flex-direction: column;
-    row-gap: 50px;
-    
 }
 
 .price {
@@ -94,15 +86,11 @@
 
 .cartBtn {
     position: relative;
+    left: 15px;
     width: 339px;
     height: 86px;
     cursor: pointer;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 25px 120px;
-    gap: 10px;
     background: #339933;
     border: 2px solid #339933;
     border-radius: 10px;
@@ -114,15 +102,23 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+    top: 100px;
 }
 
-.title {
-    font-size: 24px;
-    margin: 0;
+
+
+.dottedLine {
+    position: relative;
+    width: 422px;
+    border: 1px dashed #C0C0C0;
+    top: 30px;
+    left: 20px;
+    top: 130px;
+
 }
 
 .description {
-    position: relative;
+    text-align: left;
     width: 412px;
     height: 130px;
     font-family: 'Montserrat';
@@ -132,4 +128,24 @@
     line-height: 130%;
     letter-spacing: 0.03em;
     color: #000000;
+    gap: 10px;
+    top: 100px;
+}
+
+.descriptionName {
+    position: relative;
+    width: 412px;
+    padding-top: 50px;
+    font-size: 24px;
+    text-align: left;
+    width: 126px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    color: #000000;
+    top: 100px;
+
 }

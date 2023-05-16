@@ -1,85 +1,85 @@
 .form {
-    box-sizing: border-box;
-    width: 496px;
-    height: 393px;
-  
-    border: 2px solid #000000;
-  
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 400px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 21px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    margin-right: 40px;
-  
-  }
-  
-  .order {
-    width: 198px;
-    height: 36px;
-  
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 130%;
-    letter-spacing: 0.03em;
-    color: #000000;
-    padding: 20px;
-  
-  }
-  
-  .total {
-    width: 62px;
-    height: 31px;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 130%;
-    letter-spacing: 0.03em;
-    color: #000000;
-    padding: 20px;
-  }
-  
-  .input {
-    box-sizing: border-box;
-    width: 360px;
-    height: 73px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 4px;
-  }
-  
-  .btn {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 10px;
-    width: 360px;
-    height: 76px;
-    background: #339933;
-    border-radius: 17px;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 130%;
-    text-align: center;
-    letter-spacing: 0.03em;
-    margin: 10px;
-    display: inline-block;
-    color: white;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    align-content: center;
-    margin: 2px;
-  }
-  
+  box-sizing: border-box;
+  width: 496px;
+  height: 393px;
+
+  border: 2px solid #000000;
+
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 21px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-right: 40px;
+
+}
+
+.order {
+  position: relative;
+  width: 198px;
+  height: 36px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #000000;
+
+}
+
+.total {
+  position: relative;
+  width: 62px;
+  height: 31px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  color: #000000;
+  left: 30px;
+  top: 10px;
+  gap: 10px;
+  font-weight: bolder;
+
+}
+
+.input {
+  position: relative;
+  box-sizing: border-box;
+  width: 360px;
+  height: 73px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  padding: 20px;
+  top: 40px
+}
+
+.btn {
+  position: relative;
+  width: 360px;
+  height: 76px;
+  background: #339933;
+  border-radius: 17px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.03em;
+  display: inline-block;
+  color: white;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  align-content: center;
+  top: 60px
+}
