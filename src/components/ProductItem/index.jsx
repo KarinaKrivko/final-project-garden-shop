@@ -1,13 +1,11 @@
 import { API_URL } from "../../constants";
 import styleItem from "./styles.module.css";
 import React, { useEffect, useState } from "react";
-// import Button from '@mui/material/Button';
 import * as PropTypes from "prop-types";
 import _ from "lodash";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { calculateCounter } from "../../actions/cartCounterActions";
-import s from "./styles.module.css";
 import Prices from "../Prices";
 
 function ProductItem({ product }) {

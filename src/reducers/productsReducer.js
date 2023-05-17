@@ -1,3 +1,4 @@
+
 import {
     FETCH_PRODUCTS_REQUEST,
     FETCH_PRODUCTS_SUCCESS,
@@ -5,12 +6,12 @@ import {
 } from '../actions/productsActions';
 
 const initialState = {
-    product: {},
     loading: false,
-    error: null
+    products: [],
+    error: ''
 };
 
-const productReducer = (state = initialState, action) => {
+const productsReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_PRODUCTS_REQUEST:
             return {
@@ -19,14 +20,14 @@ const productReducer = (state = initialState, action) => {
             };
         case FETCH_PRODUCTS_SUCCESS:
             return {
-                ...state,
                 loading: false,
-                product: action.payload
+                products: action.payload,
+                error: ''
             };
         case FETCH_PRODUCTS_FAILURE:
             return {
-                ...state,
                 loading: false,
+                products: [],
                 error: action.payload
             };
         default:
@@ -34,4 +35,4 @@ const productReducer = (state = initialState, action) => {
     }
 };
 
-export default productReducer;
+export default productsReducer;

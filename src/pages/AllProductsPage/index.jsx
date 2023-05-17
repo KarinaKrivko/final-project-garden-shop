@@ -8,8 +8,8 @@ import Filters from "../../components/Filters";
 
 
 function AllProductsPage() {
-    const products = useSelector((state) => state.products.products);
     const dispatch = useDispatch();
+    const products = useSelector((state) => state.products.products);
 
     const [selectedOption, setSelectedOption] = useState("");
     const [sortedProducts, setSortedProducts] = useState([]);
@@ -62,7 +62,7 @@ function AllProductsPage() {
 
     useEffect(() => {
         setOriginalProducts(products);
-    }, []);
+    }, [products]);
 
     useEffect(() => {
         dispatch(fetchProducts());

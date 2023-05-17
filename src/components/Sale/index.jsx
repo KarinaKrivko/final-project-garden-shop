@@ -9,8 +9,8 @@ import _ from "lodash";
 import {useMediaQuery} from "@mui/material";
 
 function Sale(props) {
-    const products = useSelector((state) => state.products.products);
     const dispatch = useDispatch();
+    const products = useSelector((state) => state.products.products);
 
     useEffect(() => {
         dispatch(fetchProducts());

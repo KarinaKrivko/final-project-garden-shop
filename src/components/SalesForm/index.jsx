@@ -24,7 +24,7 @@ function SalesForm(props) {
     const handleClick = async (values, actions) => {
         actions.setSubmitting(false);
         try {
-            const response = await dispatch(postSale(JSON.stringify(values)));
+           await dispatch(postSale(JSON.stringify(values)));
         } catch (error) {
             setIsOpen(true);
         } finally {
