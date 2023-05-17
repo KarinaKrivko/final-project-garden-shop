@@ -52,7 +52,7 @@ function ValidationForm(props) {
     }
 
     return (
-        <div>
+        <div data-testid="validation-form">
             <Formik
                 initialValues={{phoneNumber: ""}}
                 validationSchema={validationSchema}
@@ -94,11 +94,11 @@ function ResponseDialog({isOpen, message, onClose, list}) {
             isOpen={isOpen}
             className={s.resultModal}
             onRequestClose={onClose}
-            contentLabel="ЗАКАЗ ПОЛУЧЕН"
+            contentLabel="ORDER REQUESTED"
             ariaHideApp={false}
         >
-            <h3>ЗАКАЗ ПОЛУЧЕН</h3>
-            <h4>Cтатус: {message}</h4>
+            <h3 data-testid="order-title">ORDER REQUESTED</h3>
+            <h4 data-testid="order-status">Status: {message}</h4>
             <div>
                 {list.map((product) => (
                     <div  key={product.data.id}>
