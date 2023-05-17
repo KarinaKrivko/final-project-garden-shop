@@ -33,7 +33,6 @@ describe("Cart component", () => {
             },
         });
 
-        // Arrange
         const cartItems = [
             {
                 count: 1,
@@ -61,7 +60,6 @@ describe("Cart component", () => {
         localStorage.setItem("product_1", JSON.stringify(cartItems[0]));
         localStorage.setItem("product_2", JSON.stringify(cartItems[1]));
 
-        // Act
         render(
             <Provider store={store}>
                 <BrowserRouter>
@@ -70,7 +68,6 @@ describe("Cart component", () => {
             </Provider>
         )
 
-        // Assert
         expect(screen.queryByText("No items in the cart.")).not.toBeInTheDocument();
         expect(screen.getByText(cartItems[0].data.title)).toBeInTheDocument();
         expect(screen.getByTestId("product-price-1")).toBeInTheDocument();

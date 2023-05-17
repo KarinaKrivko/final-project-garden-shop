@@ -52,7 +52,6 @@ describe('productActions', () => {
         axios.get.mockRejectedValue(new Error(errorMessage));
 
         await store.dispatch(fetchProduct(productId));
-        // wait for all dispatched actions to complete
         await waitFor(() => expect(store.getActions()).toEqual(expectedActions));
     });
 

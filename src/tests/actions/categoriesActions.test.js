@@ -74,7 +74,6 @@ describe('Categories Actions', () => {
 
         await store.dispatch(fetchCategories());
 
-        // wait for all dispatched actions to complete
         await waitFor(() => expect(store.getActions()).toEqual(expectedActions));
     });
 });

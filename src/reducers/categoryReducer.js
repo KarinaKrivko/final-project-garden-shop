@@ -1,4 +1,3 @@
-// reducers/categoryReducer.js
 import {
     FETCH_CATEGORY_REQUEST,
     FETCH_CATEGORY_FAILURE,
