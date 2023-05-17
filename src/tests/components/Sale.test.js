@@ -11,7 +11,7 @@ import testProducts from "../testConstants";
 const mockStore = configureStore([thunk]);
 
 describe("Sale component", () => {
- const products = testProducts
+    const products = testProducts
 
     let store = mockStore({
         products: {

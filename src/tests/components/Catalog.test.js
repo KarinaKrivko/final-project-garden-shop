@@ -1,11 +1,11 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
-import { Provider } from "react-redux";
+import {render, screen} from "@testing-library/react";
+import {Provider} from "react-redux";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import "@testing-library/jest-dom/extend-expect";
 import Catalog from '../../components/Catalog';
-import { MemoryRouter } from "react-router-dom";
+import {MemoryRouter} from "react-router-dom";
 
 const mockStore = configureStore([thunk]);
 
@@ -40,7 +40,7 @@ describe('Catalog component', () => {
             updatedAt: '2022-10-02T14:43:29.000Z',
         },
     ];
-    let store= mockStore({
+    let store = mockStore({
         categories: {
             categories,
             loading: false,
@@ -53,7 +53,7 @@ describe('Catalog component', () => {
         render(
             <Provider store={store}>
                 <MemoryRouter>
-                    <Catalog />
+                    <Catalog/>
                 </MemoryRouter>
             </Provider>
         );

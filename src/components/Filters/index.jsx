@@ -31,7 +31,8 @@ function Filters(props) {
 
 
     const handleFilterChange = (event) => {
-        if (event.keyCode!==13) return;
+
+        if (event.keyCode && event.keyCode!==13 ) return;
 
         const priceFrom = document.getElementById('priceLow').value;
         const priceTo = document.getElementById('priceHigh').value;

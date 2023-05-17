@@ -15,7 +15,7 @@ describe("AllSalesPage", () => {
                 products: [],
             },
         });
-
+        store.dispatch = jest.fn();
         render(
             <Provider store={store}>
                 <AllSalesPage/>
@@ -65,6 +65,8 @@ describe("AllSalesPage", () => {
                 ],
             },
         });
+
+        store.dispatch = jest.fn();
 
         render(
             <Provider store={store}>

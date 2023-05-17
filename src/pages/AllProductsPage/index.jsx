@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchProducts, fetchProductsSuccess} from "../../actions/productsActions";
+import {fetchProducts} from "../../actions/productsActions";
 import s from "./styles.module.css";
 import ProductItem from "../../components/ProductItem";
-import _ from "lodash";
 import Filters from "../../components/Filters";
 
 
