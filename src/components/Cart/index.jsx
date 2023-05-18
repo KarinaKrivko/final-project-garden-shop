@@ -10,7 +10,7 @@ import _ from "lodash";
 import {useDispatch} from "react-redux";
 import {calculateCounter} from "../../actions/cartCounterActions";
 import Prices from "../Prices"
-
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 function Cart(props) {
     const [cartItems, setCartItems] = useState([]);
@@ -80,7 +80,12 @@ function Cart(props) {
     };
 
     if (cartItems.length <= 0) {
-        return <div>{<p>No items in the cart.</p>}</div>;
+        return(
+        <div className={s.flex}>
+            <div className={s.iconContainer}><ShoppingCartOutlinedIcon/></div>
+            {<h3>No items in the cart.</h3>}
+
+        </div>);
     }
     return (
         <div className={s.container}>
