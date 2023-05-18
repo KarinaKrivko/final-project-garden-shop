@@ -32,8 +32,12 @@ describe("ValidationForm", () => {
         fireEvent.click(orderButton);
 
 
-       const element=  await screen.findByText("ORDER REQUESTED");
+        const element = await screen.findByText("ORDER REQUESTED");
+        const sum = await screen.findByTestId("order-sum");
+        const status = await screen.findByTestId("order-status");
 
         expect(element).toBeInTheDocument();
+        expect(sum).toBeInTheDocument();
+        expect(sum).toBeInTheDocument();
     });
 });

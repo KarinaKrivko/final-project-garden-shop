@@ -112,7 +112,7 @@ function ResponseDialog({isOpen, message, onClose, list, total}) {
                     </div>
 
                 ))}
-                <span className={s.resultModalTitle}><h4 data-testid="order-status">Ordered Sum: {total}$</h4></span>
+                <span className={s.resultModalTitle}><h4 data-testid="order-sum">Ordered Sum: {total}$</h4></span>
 
             </div>
         </ReactModal>

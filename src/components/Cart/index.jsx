@@ -139,13 +139,11 @@ function Cart(props) {
                                 +
                             </ToggleButton>
                         </ToggleButtonGroup>
-                        {/* <h3>Count: {item.count}</h3> */}
                     </div>
                     <Prices props={item.data}/>
 
                 </div>
             ))}
-            {/* <h4>Total:{localStorage.getItem("total")}</h4> */}
 
 
             <ValidationForm total={localStorage.getItem("total")}/>

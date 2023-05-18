@@ -120,15 +120,6 @@ justify-content: center;
 align-items: center;
 
 }
-
-/* h3 {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  left: 32%;
-  padding-top: -10%;
-} */
-
 .ToggleButton {
   color: #000000;
   width: 50px;
