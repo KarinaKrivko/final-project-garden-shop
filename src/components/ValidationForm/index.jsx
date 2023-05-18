@@ -45,6 +45,7 @@ function ValidationForm(props) {
         setModalOpen(false);
         setModalMessage('');
         localStorage.clear();
+        props.loadCartItems();
     };
 
     if (!total) {

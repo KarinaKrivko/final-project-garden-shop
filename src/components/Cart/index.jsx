@@ -23,7 +23,7 @@ function Cart(props) {
 
     useEffect(() => {
         loadCartItems();
-    }, []);
+    }, [dispatch]);
 
     const loadCartItems = () => {
         const storedCartItems = Object.keys(localStorage)
@@ -151,7 +151,7 @@ function Cart(props) {
             ))}
 
 
-            <ValidationForm total={localStorage.getItem("total")}/>
+            <ValidationForm total={localStorage.getItem("total")} loadCartItems={loadCartItems} />
         </div>
     );
 }
