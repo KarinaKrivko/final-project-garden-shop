@@ -104,7 +104,14 @@
     margin: 0.1em;
 }
 
-.resultModal h4 {
-    padding-left: 1em;
-    margin-left: 5em;
+
+.resultModalTotal{
+    float: right;
+}
+
+
+.resultModalTitle {
+    display: flex;
+    margin: 1em;
+    justify-content: center;
 }

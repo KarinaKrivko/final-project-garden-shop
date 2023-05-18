@@ -27,7 +27,7 @@ function ValidationForm(props) {
     const handleSubmit = async (values, actions) => {
         actions.setSubmitting(false);
         const localStorageData = _.mapValues(localStorage, (el) => JSON.parse(el));
-        const list = _.values(localStorageData).filter(it=>_.isObject(it));
+        const list = _.values(localStorageData).filter(it => _.isObject(it));
         setList(list)
 
         try {
@@ -79,14 +79,14 @@ function ValidationForm(props) {
                     </Form>
                 )}
             </Formik>
-            <ResponseDialog isOpen={modalOpen} message={modalMessage} onClose={closeModal} list={list}/>
+            <ResponseDialog isOpen={modalOpen} message={modalMessage} onClose={closeModal} list={list} total={total}/>
         </div>
     );
 }
 
 export default ValidationForm;
 
-function ResponseDialog({isOpen, message, onClose, list}) {
+function ResponseDialog({isOpen, message, onClose, list, total}) {
 
 
     return (
@@ -94,17 +94,26 @@ function ResponseDialog({isOpen, message, onClose, list}) {
             isOpen={isOpen}
             className={s.resultModal}
             onRequestClose={onClose}
-            contentLabel="ORDER REQUESTED"
             ariaHideApp={false}
         >
-            <h3 data-testid="order-title">ORDER REQUESTED</h3>
-            <h4 data-testid="order-status">Status: {message}</h4>
+            <span className={s.resultModalTitle}><h3 data-testid="order-title">ORDER REQUESTED</h3></span>
+            <span className={s.resultModalTitle}><h3 data-testid="order-status">Status: {message}</h3></span>
             <div>
                 {list.map((product) => (
-                    <div  key={product.data.id}>
-                        {product.data.title}
-                     </div>
+                    <div key={product.data.id}>
+
+                        <div className={s.resultModalItemContainer}>
+                            <div>
+                                <h3>{product.data.title}</h3>
+                                <span className={s.resultModalTotal}>{product.data.price}$</span>
+                            </div>
+                        </div>
+
+                    </div>
+
                 ))}
+                <span className={s.resultModalTitle}><h4 data-testid="order-status">Ordered Sum: {total}$</h4></span>
+
             </div>
         </ReactModal>
     );

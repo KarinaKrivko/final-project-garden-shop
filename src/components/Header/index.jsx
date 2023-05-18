@@ -8,12 +8,13 @@ import {calculateCounter} from "../../actions/cartCounterActions";
 import * as PropTypes from "prop-types";
 import {useMediaQuery} from "@mui/material";
 import HeaderMenuSmall from "../HeaderMenuSmall";
+import _ from "lodash";
 
 
 function Header(props) {
 
     const dispatch = useDispatch()
-    const cartCounter = useSelector(state => state.counter.counter);
+    const cartCounter = _.toInteger(useSelector(state => state.counter.counter));
     const isSmallScreen = useMediaQuery("(max-width: 768px)");
 
     useEffect(() => {
@@ -34,7 +35,6 @@ function Header(props) {
 export default Header;
 
 function HeaderMenuLarge(props) {
-    if (!props.cartCounter) return null
     return <>
         <div className={s.header_container}>
             <Link to="/">
