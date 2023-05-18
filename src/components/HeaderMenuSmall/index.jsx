@@ -7,7 +7,6 @@ import * as PropTypes from "prop-types";
 
 export default function HeaderMenuSmall(props) {
     const [anchorEl, setAnchorEl] = useState(null);
-    if (!props.cartCounter) return null
     const handleMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
